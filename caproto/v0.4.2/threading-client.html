@@ -30,6 +30,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -232,7 +233,7 @@ In a background thread, the Context searches for an EPICS server that provides
 that PV name and then connects to it. The PV object displays its connection
 state:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="n">dt</span>
-<span class="gh">Out[4]: </span><span class="go">&lt;PV name=&#39;random_walk:dt&#39; priority=0 address=(&#39;192.168.2.99&#39;, 50403), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;</span>
+<span class="gh">Out[4]: </span><span class="go">&lt;PV name=&#39;random_walk:dt&#39; priority=0 address=(&#39;192.168.2.99&#39;, 51648), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;</span>
 </pre></div>
 </div>
 <p>The Context displays aggregate information about the state of all connections.</p>
@@ -271,7 +272,7 @@ In [10]: res.header  # a ctypes.BigEndianStructure
 Out[10]: MessageHeader(command=15, payload_size=8, data_type=6, data_count=1, parameter1=1, parameter2=0)
 
 In [11]: res.buffers  # a collection of one or more buffers
-Out[11]: (b'', &lt;memory at 0x7fceef013108&gt;)
+Out[11]: (b'', &lt;memory at 0x7fef90722708&gt;)
 </pre>
 <p class="last">They were received directly from the socket into these structure with no
 intermediate copies. Accessing the <code class="docutils literal notranslate"><span class="pre">res.data</span></code> — which returns a
@@ -355,12 +356,12 @@ Out[20]: 6
 
 In [21]: values
 Out[21]: 
-[0.15100360488697673,
- -0.25475570217007304,
- 0.45855027107924506,
- -0.44573786590320097,
- -0.16364063223911596,
- -0.739201051879764]
+[1.1281205425353997,
+ 1.6860106441088352,
+ 0.8072963150936638,
+ 0.052539181626817255,
+ -0.09686981917873716,
+ -0.1663071637826916]
 </pre>
 <p>At any point we can remove a specific callback function:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="n">sub</span><span class="o">.</span><span class="n">remove_callback</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
@@ -438,7 +439,7 @@ upon exiting the <code class="docutils literal notranslate"><span class="pre">wi
 background thread. As the responses come in, the <code class="docutils literal notranslate"><span class="pre">results</span></code> dictionary will be
 updated.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="n">results</span>
-<span class="gh">Out[30]: </span><span class="go">{&#39;random_walk:x&#39;: array([-1.50592607]), &#39;random_walk:dt&#39;: array([1.])}</span>
+<span class="gh">Out[30]: </span><span class="go">{&#39;random_walk:x&#39;: array([-0.16630716]), &#39;random_walk:dt&#39;: array([1.])}</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="#caproto.threading.client.Batch" title="caproto.threading.client.Batch"><code class="xref py py-class docutils literal notranslate"><span class="pre">Batch</span></code></a> for more.</p>
@@ -452,7 +453,7 @@ made “idle” (disconnected). It will silently, automatically reconnect the ne
 time it is used.</p>
 <pre class="literal-block">
 In [31]: x
-Out[31]: &lt;PV name='random_walk:x' priority=0 address=('192.168.2.99', 50403), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
+Out[31]: &lt;PV name='random_walk:x' priority=0 address=('192.168.2.99', 51648), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
 
 In [32]: x.go_idle()
 
@@ -460,10 +461,10 @@ In [33]: x
 Out[33]: &lt;PV name='random_walk:x' priority=0 (idle)&gt;
 
 In [34]: x.read()
-Out[34]: ReadNotifyResponse(data=array([-1.50592607]), data_type=&lt;ChannelType.DOUBLE: 6&gt;, data_count=1, status=CAStatusCode(name='ECA_NORMAL', code=0, code_with_severity=1, severity=&lt;CASeverity.SUCCESS: 1&gt;, success=1, defunct=False, description='Normal successful completion'), ioid=4, metadata=None)
+Out[34]: ReadNotifyResponse(data=array([0.12345886]), data_type=&lt;ChannelType.DOUBLE: 6&gt;, data_count=1, status=CAStatusCode(name='ECA_NORMAL', code=0, code_with_severity=1, severity=&lt;CASeverity.SUCCESS: 1&gt;, success=1, defunct=False, description='Normal successful completion'), ioid=4, metadata=None)
 
 In [35]: x
-Out[35]: &lt;PV name='random_walk:x' priority=0 address=('192.168.2.99', 50403), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
+Out[35]: &lt;PV name='random_walk:x' priority=0 address=('192.168.2.99', 51648), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
 </pre>
 <p>Notice that when the PV was read it automatically reconnected, requiring no
 action from the user.</p>
@@ -1175,7 +1176,7 @@ are disconnected to initiate a reconnection attempt.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>

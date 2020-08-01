@@ -25,6 +25,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -235,13 +236,13 @@ raw bytes of that response are:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">richer_res</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;random_walk:dt&#39;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 
 <span class="gp">In [8]: </span><span class="n">richer_res</span><span class="o">.</span><span class="n">metadata</span>
-<span class="gh">Out[8]: </span><span class="go">DBR_TIME_DOUBLE(status=&lt;AlarmStatus.NO_ALARM: 0&gt;, severity=&lt;AlarmSeverity.NO_ALARM: 0&gt;, timestamp=1596302706.62542)</span>
+<span class="gh">Out[8]: </span><span class="go">DBR_TIME_DOUBLE(status=&lt;AlarmStatus.NO_ALARM: 0&gt;, severity=&lt;AlarmSeverity.NO_ALARM: 0&gt;, timestamp=1596307401.381708)</span>
 
 <span class="gp">In [9]: </span><span class="n">richer_res</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">timestamp</span>
-<span class="gh">Out[9]: </span><span class="go">1596302706.62542</span>
+<span class="gh">Out[9]: </span><span class="go">1596307401.381708</span>
 
 <span class="gp">In [10]: </span><span class="n">richer_res</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">stamp</span><span class="o">.</span><span class="n">as_datetime</span><span class="p">()</span>  <span class="c1"># a convenience method</span>
-<span class="gh">Out[10]: </span><span class="go">datetime.datetime(2020, 8, 1, 17, 25, 6, 625420)</span>
+<span class="gh">Out[10]: </span><span class="go">datetime.datetime(2020, 8, 1, 18, 43, 21, 381708)</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="#caproto.sync.client.read" title="caproto.sync.client.read"><code class="xref py py-func docutils literal notranslate"><span class="pre">read()</span></code></a> for more information on the values accepted by the
@@ -255,7 +256,7 @@ data structures.</p>
 <span class="gh">Out[11]: </span><span class="go">MessageHeader(command=15, payload_size=8, data_type=6, data_count=1, parameter1=1, parameter2=0)</span>
 
 <span class="gp">In [12]: </span><span class="n">res</span><span class="o">.</span><span class="n">buffers</span>  <span class="c1"># a collection of one or more buffers</span>
-<span class="gh">Out[12]: </span><span class="go">(b&#39;&#39;, &lt;memory at 0x7fdef462ea10&gt;)</span>
+<span class="gh">Out[12]: </span><span class="go">(b&#39;&#39;, &lt;memory at 0x7fdaa90ad870&gt;)</span>
 </pre></div>
 </div>
 <p>They were received directly from the socket into these structure with no
@@ -824,7 +825,7 @@ user.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>

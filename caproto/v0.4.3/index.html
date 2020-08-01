@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,30 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Install Caproto" href="install.html" /> 
@@ -49,7 +51,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> caproto
+            <a href="#" class="icon icon-home" alt="Documentation Home"> caproto
           
 
           
@@ -76,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -111,6 +114,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -149,7 +153,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
       <li>caproto: a pure-Python Channel Access protocol library</li>
     
@@ -223,44 +227,52 @@ server.</p>
 <p>Most existing EPICS tools are built on well-established C and C++ libraries.
 Why write something from scratch in Python instead of just wrapping those?</p>
 <ol class="arabic">
-<li><p><strong>Effortlessly Portable</strong>: No required dependencies — even numpy is
+<li><p class="first"><strong>Effortlessly Portable</strong>: No required dependencies — even numpy is
 optional. Caproto just needs Python itself. We use it on Linux, OSX,
-Windows, and RaspberryPi.</p></li>
-<li><p><strong>Easy to Install and Use</strong>: See “Try caproto in four lines,” above.</p></li>
-<li><p><strong>Handy for Debugging</strong>: Programmatic access to convenient Python objects
+Windows, and RaspberryPi.</p>
+</li>
+<li><p class="first"><strong>Easy to Install and Use</strong>: See “Try caproto in four lines,” above.</p>
+</li>
+<li><p class="first"><strong>Handy for Debugging</strong>: Programmatic access to convenient Python objects
 embodying every CA message sent and received. See the examples of verbose
-logging with the <a class="reference internal" href="command-line-client.html"><span class="doc">Command-Line Client</span></a>.</p></li>
-<li><p><strong>Efficient</strong>: Data is read directly from sockets into contiguous-memory
+logging with the <a class="reference internal" href="command-line-client.html"><span class="doc">Command-Line Client</span></a>.</p>
+</li>
+<li><p class="first"><strong>Efficient</strong>: Data is read directly from sockets into contiguous-memory
 ctypes structures.</p>
 <ul class="simple">
-<li><p>Zero-copy into <code class="docutils literal notranslate"><span class="pre">ctypes</span></code> and <code class="docutils literal notranslate"><span class="pre">array.array</span></code> or <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p></li>
-<li><p>Only pay a performance cost of human-friendly introspection if and when
-you use it.</p></li>
+<li>Zero-copy into <code class="docutils literal notranslate"><span class="pre">ctypes</span></code> and <code class="docutils literal notranslate"><span class="pre">array.array</span></code> or <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</li>
+<li>Only pay a performance cost of human-friendly introspection if and when
+you use it.</li>
 </ul>
 <p>For the numbers, see caproto’s
 <a class="reference external" href="https://nsls-ii.github.io/caproto/bench/#/">benchmarks</a>.</p>
 </li>
-<li><p><strong>Batteries Included</strong>: Includes multiple server and client implementations
+<li><p class="first"><strong>Batteries Included</strong>: Includes multiple server and client implementations
 with different concurrency strategies.</p>
 <ul class="simple">
-<li><p>Command-line tools (largely argument-compatible with standard epics-base
-ca*)</p></li>
-<li><p>A drop-in replacement for pyepics</p></li>
-<li><p>Various client and server implementations that are synchronous, threaded,
-or employing one of Python’s cooperative concurrency frameworks</p></li>
+<li>Command-line tools (largely argument-compatible with standard epics-base
+ca*)</li>
+<li>A drop-in replacement for pyepics</li>
+<li>Various client and server implementations that are synchronous, threaded,
+or employing one of Python’s cooperative concurrency frameworks</li>
 </ul>
 </li>
-<li><p><strong>Accessible</strong>: Writing IOCs in pure Python is so easy, a scientist can do
-it!</p></li>
-<li><p><strong>Reusable</strong>: “Sans-I/O” design separates protocol interpretation from wire
+<li><p class="first"><strong>Accessible</strong>: Writing IOCs in pure Python is so easy, a scientist can do
+it!</p>
+</li>
+<li><p class="first"><strong>Reusable</strong>: “Sans-I/O” design separates protocol interpretation from wire
 transport. See the <a class="reference external" href="http://sans-io.readthedocs.io/">sans-I/O documentation</a> for more on the rationale for this design
-pattern and a list of related projects.</p></li>
-<li><p><strong>Consistent</strong>: Server and client implementations share protocol state
-machine code.</p></li>
-<li><p><strong>Robust</strong>: Over 1500 unit tests verify compatibility with standard
-epics-base tools (tested against 3.14, 3.15, 3.16, R7).</p></li>
-<li><p><strong>Succinct</strong>: The core of the package is about the same word count as the
-CA protocol documentation.</p></li>
+pattern and a list of related projects.</p>
+</li>
+<li><p class="first"><strong>Consistent</strong>: Server and client implementations share protocol state
+machine code.</p>
+</li>
+<li><p class="first"><strong>Robust</strong>: Over 1500 unit tests verify compatibility with standard
+epics-base tools (tested against 3.14, 3.15, 3.16, R7).</p>
+</li>
+<li><p class="first"><strong>Succinct</strong>: The core of the package is about the same word count as the
+CA protocol documentation.</p>
+</li>
 </ol>
 <p>All that said, some applications of EPICS — such as running an accelerator
 — rely on the battle-tested reliability of EPICS’ reference implementation.
@@ -271,8 +283,8 @@ accessibility.</p>
 <div class="section" id="vital-statistics">
 <h2>Vital Statistics<a class="headerlink" href="#vital-statistics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Requirements: Python 3.6+ (no other required dependencies!)</p></li>
-<li><p>License: 3-clause BSD</p></li>
+<li>Requirements: Python 3.6+ (no other required dependencies!)</li>
+<li>License: 3-clause BSD</li>
 </ul>
 </div>
 <div class="section" id="acknowledgement">
@@ -411,11 +423,19 @@ learning exercises.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Daniel Allan
+        
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -426,7 +446,6 @@ learning exercises.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

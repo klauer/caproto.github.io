@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -35,6 +30,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Details of our Protocol Compliance for CA Nerds" href="protocol-compliance.html" />
@@ -52,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> caproto
+            <a href="index.html" class="icon icon-home"> caproto
           
 
           
@@ -79,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -126,7 +124,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -165,7 +162,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li>Core API Documentation</li>
     
@@ -230,26 +227,28 @@ provided by the Channel Access specification.</p>
 <p>These names are rather opaque, but each Command provides views on this same
 data through type-specific attributes with more obvious names. These are the
 same names used in the Command’s <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> and <code class="docutils literal notranslate"><span class="pre">__init__</span></code> arguments.</p>
-<pre class="literal-block">In [5]: com.version
-Out[5]: 13
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">com</span><span class="o">.</span><span class="n">version</span>
+<span class="gh">Out[5]: </span><span class="go">13</span>
 
-In [6]: com.priority
-Out[6]: 0</pre>
+<span class="gp">In [6]: </span><span class="n">com</span><span class="o">.</span><span class="n">priority</span>
+<span class="gh">Out[6]: </span><span class="go">0</span>
+</pre></div>
+</div>
 <p>This is a complete list of the Commands. They are sorted in Command ID order,
 designated by the Channel Access specification.</p>
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.VersionRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">VersionRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">priority</span></em>, <em class="sig-param"><span class="n">version</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#VersionRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VersionRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">VersionRequest</code><span class="sig-paren">(</span><em class="sig-param">priority</em>, <em class="sig-param">version</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#VersionRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VersionRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initiate a new connection or broadcast between the client and the server.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.VersionRequest.priority">
 <code class="sig-name descname">priority</code><a class="headerlink" href="#caproto.VersionRequest.priority" title="Permalink to this definition">¶</a></dt>
 <dd><p>Between 0 (low) and 99 (high) designating this connection’s priority
 in the event of congestion.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.VersionRequest.version">
 <code class="sig-name descname">version</code><a class="headerlink" href="#caproto.VersionRequest.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>The version of the Channel Access protocol.</p>
@@ -257,12 +256,12 @@ in the event of congestion.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.VersionResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">VersionResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">version</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#VersionResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VersionResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">VersionResponse</code><span class="sig-paren">(</span><em class="sig-param">version</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#VersionResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VersionResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Respond to a client’s initiation of a new connection or broadcast.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.VersionResponse.version">
 <code class="sig-name descname">version</code><a class="headerlink" href="#caproto.VersionResponse.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>The version of the Channel Access protocol.</p>
@@ -270,36 +269,36 @@ in the event of congestion.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.SearchRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">SearchRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">cid</span></em>, <em class="sig-param"><span class="n">version</span></em>, <em class="sig-param"><span class="n">reply</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#SearchRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.SearchRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">SearchRequest</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">cid</em>, <em class="sig-param">version</em>, <em class="sig-param">reply=5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#SearchRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.SearchRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Query for the address of the server that provides a given Channel.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchRequest.name">
 <code class="sig-name descname">name</code><a class="headerlink" href="#caproto.SearchRequest.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>String name of the channel (i.e. ‘PV’)</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchRequest.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.SearchRequest.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer that uniquely identifies this search query on the client side.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchRequest.version">
 <code class="sig-name descname">version</code><a class="headerlink" href="#caproto.SearchRequest.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>The version of the Channel Access protocol.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchRequest.payload_size">
 <code class="sig-name descname">payload_size</code><a class="headerlink" href="#caproto.SearchRequest.payload_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Padded length of name string</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchRequest.reply">
 <code class="sig-name descname">reply</code><a class="headerlink" href="#caproto.SearchRequest.reply" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hard-coded to <code class="xref py py-data docutils literal notranslate"><span class="pre">NO_REPLY</span></code> (<code class="xref py py-data docutils literal notranslate"><span class="pre">5</span></code>) meaning that only the
@@ -308,31 +307,31 @@ server(s) with an affirmative response should reply.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.SearchResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">SearchResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">port</span></em>, <em class="sig-param"><span class="n">ip</span></em>, <em class="sig-param"><span class="n">cid</span></em>, <em class="sig-param"><span class="n">version</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#SearchResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.SearchResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">SearchResponse</code><span class="sig-paren">(</span><em class="sig-param">port</em>, <em class="sig-param">ip</em>, <em class="sig-param">cid</em>, <em class="sig-param">version</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#SearchResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.SearchResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Answer a <a class="reference internal" href="#caproto.SearchRequest" title="caproto.SearchRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchRequest</span></code></a> giving the address of a Channel.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchResponse.port">
 <code class="sig-name descname">port</code><a class="headerlink" href="#caproto.SearchResponse.port" title="Permalink to this definition">¶</a></dt>
 <dd><p>Port number that will accept TCP connections with clients.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchResponse.ip">
 <code class="sig-name descname">ip</code><a class="headerlink" href="#caproto.SearchResponse.ip" title="Permalink to this definition">¶</a></dt>
 <dd><p>IP address (as a string) that will accept TCP connections with clients.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchResponse.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.SearchResponse.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Echoing <a class="reference internal" href="#caproto.SearchResponse.cid" title="caproto.SearchResponse.cid"><code class="xref py py-data docutils literal notranslate"><span class="pre">cid</span></code></a> of <a class="reference internal" href="#caproto.SearchRequest" title="caproto.SearchRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchRequest</span></code></a> to let the client match
 this response with the original request.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.SearchResponse.version">
 <code class="sig-name descname">version</code><a class="headerlink" href="#caproto.SearchResponse.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>The version of the Channel Access protocol.</p>
@@ -340,19 +339,19 @@ this response with the original request.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.NotFoundResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">NotFoundResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">version</span></em>, <em class="sig-param"><span class="n">cid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#NotFoundResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.NotFoundResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">NotFoundResponse</code><span class="sig-paren">(</span><em class="sig-param">version</em>, <em class="sig-param">cid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#NotFoundResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.NotFoundResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Answer a <a class="reference internal" href="#caproto.SearchResponse" title="caproto.SearchResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchResponse</span></code></a> in the negative.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.NotFoundResponse.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.NotFoundResponse.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Echoing <a class="reference internal" href="#caproto.NotFoundResponse.cid" title="caproto.NotFoundResponse.cid"><code class="xref py py-data docutils literal notranslate"><span class="pre">cid</span></code></a> of <a class="reference internal" href="#caproto.SearchRequest" title="caproto.SearchRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchRequest</span></code></a> to let the client match
 this response with the original request.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.NotFoundResponse.version">
 <code class="sig-name descname">version</code><a class="headerlink" href="#caproto.NotFoundResponse.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>The version of the Channel Access protocol.</p>
@@ -360,50 +359,50 @@ this response with the original request.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.EchoRequest">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EchoRequest</code><a class="reference internal" href="_modules/caproto/_commands.html#EchoRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EchoRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request an <a class="reference internal" href="#caproto.EchoResponse" title="caproto.EchoResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">EchoResponse</span></code></a>.</p>
 <p>This command has no fields.</p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.EchoResponse">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EchoResponse</code><a class="reference internal" href="_modules/caproto/_commands.html#EchoResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EchoResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Respond to an <a class="reference internal" href="#caproto.EchoRequest" title="caproto.EchoRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">EchoRequest</span></code></a>.</p>
 <p>This command has no fields.</p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.Beacon">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">Beacon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">version</span></em>, <em class="sig-param"><span class="n">server_port</span></em>, <em class="sig-param"><span class="n">beacon_id</span></em>, <em class="sig-param"><span class="n">address</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#Beacon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Beacon" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">Beacon</code><span class="sig-paren">(</span><em class="sig-param">version</em>, <em class="sig-param">server_port</em>, <em class="sig-param">beacon_id</em>, <em class="sig-param">address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#Beacon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Beacon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Heartbeat beacon sent by the server.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.Beacon.version">
 <code class="sig-name descname">version</code><a class="headerlink" href="#caproto.Beacon.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>The version of the Channel Access protocol.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.Beacon.server_port">
 <code class="sig-name descname">server_port</code><a class="headerlink" href="#caproto.Beacon.server_port" title="Permalink to this definition">¶</a></dt>
 <dd><p>Port number.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.Beacon.beacon_id">
 <code class="sig-name descname">beacon_id</code><a class="headerlink" href="#caproto.Beacon.beacon_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sequentially incremented integer.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.Beacon.address">
 <code class="sig-name descname">address</code><a class="headerlink" href="#caproto.Beacon.address" title="Permalink to this definition">¶</a></dt>
 <dd><p>IP address encoded as integer.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.Beacon.address_string">
 <code class="sig-name descname">address_string</code><a class="headerlink" href="#caproto.Beacon.address_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>IP address as string.</p>
@@ -411,12 +410,12 @@ this response with the original request.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.RepeaterRegisterRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">RepeaterRegisterRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">client_address</span><span class="o">=</span><span class="default_value">'0.0.0.0'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#RepeaterRegisterRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.RepeaterRegisterRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">RepeaterRegisterRequest</code><span class="sig-paren">(</span><em class="sig-param">client_address='0.0.0.0'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#RepeaterRegisterRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.RepeaterRegisterRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register a client with the Repeater.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.RepeaterRegisterRequest.client_address">
 <code class="sig-name descname">client_address</code><a class="headerlink" href="#caproto.RepeaterRegisterRequest.client_address" title="Permalink to this definition">¶</a></dt>
 <dd><p>IP address of the client (as a string).</p>
@@ -424,12 +423,12 @@ this response with the original request.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.RepeaterConfirmResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">RepeaterConfirmResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repeater_address</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#RepeaterConfirmResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.RepeaterConfirmResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">RepeaterConfirmResponse</code><span class="sig-paren">(</span><em class="sig-param">repeater_address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#RepeaterConfirmResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.RepeaterConfirmResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Confirm successful client registration with the Repeater.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.RepeaterConfirmResponse.repeater_address">
 <code class="sig-name descname">repeater_address</code><a class="headerlink" href="#caproto.RepeaterConfirmResponse.repeater_address" title="Permalink to this definition">¶</a></dt>
 <dd><p>IP address of repeater (as a string).</p>
@@ -437,55 +436,55 @@ this response with the original request.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.EventAddRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventAddRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">subscriptionid</span></em>, <em class="sig-param"><span class="n">low</span></em>, <em class="sig-param"><span class="n">high</span></em>, <em class="sig-param"><span class="n">to</span></em>, <em class="sig-param"><span class="n">mask</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#EventAddRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventAddRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventAddRequest</code><span class="sig-paren">(</span><em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">sid</em>, <em class="sig-param">subscriptionid</em>, <em class="sig-param">low</em>, <em class="sig-param">high</em>, <em class="sig-param">to</em>, <em class="sig-param">mask</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#EventAddRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventAddRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subscribe; i.e. request to notified of changes in a Channel’s value.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddRequest.data_type">
 <code class="sig-name descname">data_type</code><a class="headerlink" href="#caproto.EventAddRequest.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer code of desired DBR type of readings.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddRequest.data_count">
 <code class="sig-name descname">data_count</code><a class="headerlink" href="#caproto.EventAddRequest.data_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Desired number of elements per reading.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddRequest.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.EventAddRequest.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID of this Channel designated by the server.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddRequest.subscriptionid">
 <code class="sig-name descname">subscriptionid</code><a class="headerlink" href="#caproto.EventAddRequest.subscriptionid" title="Permalink to this definition">¶</a></dt>
 <dd><p>New integer ID designated by the client uniquely identifying this
 subscription on this Virtual Circuit.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddRequest.low">
 <code class="sig-name descname">low</code><a class="headerlink" href="#caproto.EventAddRequest.low" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated. (Use <a class="reference internal" href="#caproto.EventAddRequest.mask" title="caproto.EventAddRequest.mask"><code class="xref py py-data docutils literal notranslate"><span class="pre">mask</span></code></a>.)</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddRequest.high">
 <code class="sig-name descname">high</code><a class="headerlink" href="#caproto.EventAddRequest.high" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated. (Use <a class="reference internal" href="#caproto.EventAddRequest.mask" title="caproto.EventAddRequest.mask"><code class="xref py py-data docutils literal notranslate"><span class="pre">mask</span></code></a>.)</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddRequest.to">
 <code class="sig-name descname">to</code><a class="headerlink" href="#caproto.EventAddRequest.to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated. (Use <a class="reference internal" href="#caproto.EventAddRequest.mask" title="caproto.EventAddRequest.mask"><code class="xref py py-data docutils literal notranslate"><span class="pre">mask</span></code></a>.)</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddRequest.mask">
 <code class="sig-name descname">mask</code><a class="headerlink" href="#caproto.EventAddRequest.mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mask indicating which changes to report.</p>
@@ -493,42 +492,42 @@ subscription on this Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.EventAddResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventAddResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">status</span></em>, <em class="sig-param"><span class="n">subscriptionid</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#EventAddResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventAddResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventAddResponse</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">status</em>, <em class="sig-param">subscriptionid</em>, <em class="sig-param">*</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#EventAddResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventAddResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify the client of a change in a Channel’s value.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddResponse.data">
 <code class="sig-name descname">data</code><a class="headerlink" href="#caproto.EventAddResponse.data" title="Permalink to this definition">¶</a></dt>
 <dd><p>data as built-in Python or numpy types</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddResponse.data_type">
 <code class="sig-name descname">data_type</code><a class="headerlink" href="#caproto.EventAddResponse.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer code of DBR type of reading.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddResponse.data_count">
 <code class="sig-name descname">data_count</code><a class="headerlink" href="#caproto.EventAddResponse.data_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of elements in this reading.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddResponse.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.EventAddResponse.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID of this Channel designated by the server.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddResponse.status">
 <code class="sig-name descname">status</code><a class="headerlink" href="#caproto.EventAddResponse.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>As per Channel Access spec, 1 is success; 0 or &gt;1 are various failures.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventAddResponse.subscriptionid">
 <code class="sig-name descname">subscriptionid</code><a class="headerlink" href="#caproto.EventAddResponse.subscriptionid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Echoing the <a class="reference internal" href="#caproto.EventAddResponse.subscriptionid" title="caproto.EventAddResponse.subscriptionid"><code class="xref py py-data docutils literal notranslate"><span class="pre">subscriptionid</span></code></a> in the <a class="reference internal" href="#caproto.EventAddRequest" title="caproto.EventAddRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventAddRequest</span></code></a></p>
@@ -536,24 +535,24 @@ subscription on this Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.EventCancelRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventCancelRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">subscriptionid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#EventCancelRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventCancelRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventCancelRequest</code><span class="sig-paren">(</span><em class="sig-param">data_type</em>, <em class="sig-param">sid</em>, <em class="sig-param">subscriptionid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#EventCancelRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventCancelRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>End notifcations about chnages in a Channel’s value.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventCancelRequest.data_type">
 <code class="sig-name descname">data_type</code><a class="headerlink" href="#caproto.EventCancelRequest.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer code of DBR type of reading.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventCancelRequest.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.EventCancelRequest.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID of this Channel designated by the server.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventCancelRequest.subscriptionid">
 <code class="sig-name descname">subscriptionid</code><a class="headerlink" href="#caproto.EventCancelRequest.subscriptionid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this subscription.</p>
@@ -561,24 +560,24 @@ subscription on this Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.EventCancelResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventCancelResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">subscriptionid</span></em>, <em class="sig-param"><span class="n">data_count</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#EventCancelResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventCancelResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventCancelResponse</code><span class="sig-paren">(</span><em class="sig-param">data_type</em>, <em class="sig-param">sid</em>, <em class="sig-param">subscriptionid</em>, <em class="sig-param">data_count</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#EventCancelResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventCancelResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Confirm receipt of <a class="reference internal" href="#caproto.EventCancelRequest" title="caproto.EventCancelRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventCancelRequest</span></code></a>.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventCancelResponse.data_type">
 <code class="sig-name descname">data_type</code><a class="headerlink" href="#caproto.EventCancelResponse.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer code of DBR type of reading.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventCancelResponse.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.EventCancelResponse.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID of this Channel designated by the server.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.EventCancelResponse.subscriptionid">
 <code class="sig-name descname">subscriptionid</code><a class="headerlink" href="#caproto.EventCancelResponse.subscriptionid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this subscription.</p>
@@ -586,56 +585,56 @@ subscription on this Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ReadRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">ioid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ReadRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadRequest</code><span class="sig-paren">(</span><em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">sid</em>, <em class="sig-param">ioid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ReadRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated by Channel Access since 3.13. See <a class="reference internal" href="#caproto.ReadNotifyRequest" title="caproto.ReadNotifyRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadNotifyRequest</span></code></a>.</p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ReadResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">ioid</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ReadResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadResponse</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">sid</em>, <em class="sig-param">ioid</em>, <em class="sig-param">*</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ReadResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated by Channel Access since 3.13. See <a class="reference internal" href="#caproto.ReadNotifyResponse" title="caproto.ReadNotifyResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadNotifyResponse</span></code></a>.</p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.WriteRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">WriteRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">ioid</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#WriteRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.WriteRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">WriteRequest</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">sid</em>, <em class="sig-param">ioid</em>, <em class="sig-param">*</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#WriteRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.WriteRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated: See <a class="reference internal" href="#caproto.WriteNotifyRequest" title="caproto.WriteNotifyRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteNotifyRequest</span></code></a>.</p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.EventsOffRequest">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventsOffRequest</code><a class="reference internal" href="_modules/caproto/_commands.html#EventsOffRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventsOffRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Temporarily turn off <a class="reference internal" href="#caproto.EventAddResponse" title="caproto.EventAddResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventAddResponse</span></code></a> notifications.</p>
 <p>This command has no fields.</p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.EventsOnRequest">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">EventsOnRequest</code><a class="reference internal" href="_modules/caproto/_commands.html#EventsOnRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.EventsOnRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore <a class="reference internal" href="#caproto.EventAddResponse" title="caproto.EventAddResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventAddResponse</span></code></a> notifications.</p>
 <p>This command has no fields.</p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ReadSyncRequest">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadSyncRequest</code><a class="reference internal" href="_modules/caproto/_commands.html#ReadSyncRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadSyncRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated by Channel Access: See <a class="reference internal" href="#caproto.ReadNotifyRequest" title="caproto.ReadNotifyRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadNotifyRequest</span></code></a></p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ErrorResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ErrorResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">original_request</span></em>, <em class="sig-param"><span class="n">cid</span></em>, <em class="sig-param"><span class="n">status</span></em>, <em class="sig-param"><span class="n">error_message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ErrorResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ErrorResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ErrorResponse</code><span class="sig-paren">(</span><em class="sig-param">original_request</em>, <em class="sig-param">cid</em>, <em class="sig-param">status</em>, <em class="sig-param">error_message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ErrorResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ErrorResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify client of a server-side error, including some details about error.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ErrorResponse.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.ErrorResponse.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the client.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ErrorResponse.status">
 <code class="sig-name descname">status</code><a class="headerlink" href="#caproto.ErrorResponse.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>As per Channel Access spec, 1 is success; 0 or &gt;1 are various failures.</p>
@@ -643,18 +642,18 @@ subscription on this Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ClearChannelRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ClearChannelRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">cid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ClearChannelRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClearChannelRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ClearChannelRequest</code><span class="sig-paren">(</span><em class="sig-param">sid</em>, <em class="sig-param">cid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ClearChannelRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClearChannelRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close a Channel.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ClearChannelRequest.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.ClearChannelRequest.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the client.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ClearChannelRequest.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.ClearChannelRequest.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the server.</p>
@@ -662,18 +661,18 @@ subscription on this Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ClearChannelResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ClearChannelResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">cid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ClearChannelResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClearChannelResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ClearChannelResponse</code><span class="sig-paren">(</span><em class="sig-param">sid</em>, <em class="sig-param">cid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ClearChannelResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClearChannelResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Confirm that a Channel has been closed.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ClearChannelResponse.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.ClearChannelResponse.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the client.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ClearChannelResponse.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.ClearChannelResponse.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the server.</p>
@@ -681,30 +680,30 @@ subscription on this Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ReadNotifyRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadNotifyRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">ioid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ReadNotifyRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadNotifyRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadNotifyRequest</code><span class="sig-paren">(</span><em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">sid</em>, <em class="sig-param">ioid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ReadNotifyRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadNotifyRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request a fresh reading of a Channel.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyRequest.data_type">
 <code class="sig-name descname">data_type</code><a class="headerlink" href="#caproto.ReadNotifyRequest.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer code of desired DBR type of readings.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyRequest.data_count">
 <code class="sig-name descname">data_count</code><a class="headerlink" href="#caproto.ReadNotifyRequest.data_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Desired number of elements per reading.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyRequest.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.ReadNotifyRequest.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the server.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyRequest.ioid">
 <code class="sig-name descname">ioid</code><a class="headerlink" href="#caproto.ReadNotifyRequest.ioid" title="Permalink to this definition">¶</a></dt>
 <dd><p>New integer ID uniquely identifying this I/O transaction on this
@@ -713,42 +712,42 @@ Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ReadNotifyResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadNotifyResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">status</span></em>, <em class="sig-param"><span class="n">ioid</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ReadNotifyResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadNotifyResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ReadNotifyResponse</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">status</em>, <em class="sig-param">ioid</em>, <em class="sig-param">*</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ReadNotifyResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ReadNotifyResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request a fresh reading of a Channel.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyResponse.data">
 <code class="sig-name descname">data</code><a class="headerlink" href="#caproto.ReadNotifyResponse.data" title="Permalink to this definition">¶</a></dt>
 <dd><p>data as built-in Python or numpy types</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyResponse.metadata">
 <code class="sig-name descname">metadata</code><a class="headerlink" href="#caproto.ReadNotifyResponse.metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>metadata in a ctypes.Structure</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyResponse.data_type">
 <code class="sig-name descname">data_type</code><a class="headerlink" href="#caproto.ReadNotifyResponse.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer code of desired DBR type of readings.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyResponse.data_count">
 <code class="sig-name descname">data_count</code><a class="headerlink" href="#caproto.ReadNotifyResponse.data_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Desired number of elements per reading.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyResponse.status">
 <code class="sig-name descname">status</code><a class="headerlink" href="#caproto.ReadNotifyResponse.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>As per Channel Access spec, 1 is success; 0 or &gt;1 are various failures.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ReadNotifyResponse.ioid">
 <code class="sig-name descname">ioid</code><a class="headerlink" href="#caproto.ReadNotifyResponse.ioid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for I/O transaction, echoing <a class="reference internal" href="#caproto.ReadNotifyRequest" title="caproto.ReadNotifyRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadNotifyRequest</span></code></a>.</p>
@@ -756,42 +755,42 @@ Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.WriteNotifyRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">WriteNotifyRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">sid</span></em>, <em class="sig-param"><span class="n">ioid</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#WriteNotifyRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.WriteNotifyRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">WriteNotifyRequest</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">sid</em>, <em class="sig-param">ioid</em>, <em class="sig-param">*</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#WriteNotifyRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.WriteNotifyRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a value to a Channel.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyRequest.data">
 <code class="sig-name descname">data</code><a class="headerlink" href="#caproto.WriteNotifyRequest.data" title="Permalink to this definition">¶</a></dt>
 <dd><p>data as built-in Python or numpy types</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyRequest.metadata">
 <code class="sig-name descname">metadata</code><a class="headerlink" href="#caproto.WriteNotifyRequest.metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>metadata in a ctypes.Structure</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyRequest.data_type">
 <code class="sig-name descname">data_type</code><a class="headerlink" href="#caproto.WriteNotifyRequest.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer code of DBR type.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyRequest.data_count">
 <code class="sig-name descname">data_count</code><a class="headerlink" href="#caproto.WriteNotifyRequest.data_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of elements.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyRequest.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.WriteNotifyRequest.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the server.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyRequest.ioid">
 <code class="sig-name descname">ioid</code><a class="headerlink" href="#caproto.WriteNotifyRequest.ioid" title="Permalink to this definition">¶</a></dt>
 <dd><p>New integer ID uniquely identifying this I/O transaction on this
@@ -800,37 +799,37 @@ Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.WriteNotifyResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">WriteNotifyResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">data_count</span></em>, <em class="sig-param"><span class="n">status</span></em>, <em class="sig-param"><span class="n">ioid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#WriteNotifyResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.WriteNotifyResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">WriteNotifyResponse</code><span class="sig-paren">(</span><em class="sig-param">data_type</em>, <em class="sig-param">data_count</em>, <em class="sig-param">status</em>, <em class="sig-param">ioid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#WriteNotifyResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.WriteNotifyResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Confirm the receipt of a <a class="reference internal" href="#caproto.WriteNotifyRequest" title="caproto.WriteNotifyRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteNotifyRequest</span></code></a>.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyResponse.data_type">
 <code class="sig-name descname">data_type</code><a class="headerlink" href="#caproto.WriteNotifyResponse.data_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer code of DBR type.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyResponse.data_count">
 <code class="sig-name descname">data_count</code><a class="headerlink" href="#caproto.WriteNotifyResponse.data_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of elements.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyResponse.sid">
 <code class="sig-name descname">sid</code><a class="headerlink" href="#caproto.WriteNotifyResponse.sid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the server.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyResponse.ioid">
 <code class="sig-name descname">ioid</code><a class="headerlink" href="#caproto.WriteNotifyResponse.ioid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this I/O transaction, echoing
 <a class="reference internal" href="#caproto.WriteNotifyRequest" title="caproto.WriteNotifyRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteNotifyRequest</span></code></a>.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.WriteNotifyResponse.status">
 <code class="sig-name descname">status</code><a class="headerlink" href="#caproto.WriteNotifyResponse.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>As per Channel Access spec, 1 is success; 0 or &gt;1 are various failures.</p>
@@ -838,12 +837,12 @@ Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ClientNameRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ClientNameRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ClientNameRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientNameRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ClientNameRequest</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ClientNameRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientNameRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tell the server the client name (i.e., user name) of the client.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ClientNameRequest.name">
 <code class="sig-name descname">name</code><a class="headerlink" href="#caproto.ClientNameRequest.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Client name.</p>
@@ -851,12 +850,12 @@ Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.HostNameRequest">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">HostNameRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#HostNameRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.HostNameRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">HostNameRequest</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#HostNameRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.HostNameRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tell the server the host name of the client.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.HostNameRequest.name">
 <code class="sig-name descname">name</code><a class="headerlink" href="#caproto.HostNameRequest.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Host name.</p>
@@ -864,18 +863,18 @@ Virtual Circuit.</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.AccessRightsResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">AccessRightsResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cid</span></em>, <em class="sig-param"><span class="n">access_rights</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#AccessRightsResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.AccessRightsResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">AccessRightsResponse</code><span class="sig-paren">(</span><em class="sig-param">cid</em>, <em class="sig-param">access_rights</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#AccessRightsResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.AccessRightsResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify the client that channel creation failed.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.AccessRightsResponse.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.AccessRightsResponse.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the client.</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.AccessRightsResponse.access_rights">
 <code class="sig-name descname">access_rights</code><a class="headerlink" href="#caproto.AccessRightsResponse.access_rights" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer designated level of read or write access. (See Channel Access
@@ -884,12 +883,12 @@ spec for details about meanings.)</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.CreateChFailResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">CreateChFailResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#CreateChFailResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.CreateChFailResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">CreateChFailResponse</code><span class="sig-paren">(</span><em class="sig-param">cid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#CreateChFailResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.CreateChFailResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify the client that channel creation failed.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.CreateChFailResponse.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.CreateChFailResponse.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the client.</p>
@@ -897,12 +896,12 @@ spec for details about meanings.)</p>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ServerDisconnResponse">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ServerDisconnResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ServerDisconnResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerDisconnResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ServerDisconnResponse</code><span class="sig-paren">(</span><em class="sig-param">cid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_commands.html#ServerDisconnResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerDisconnResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify the client that server will disconnect from this Channel.</p>
 <p>Fields:</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.ServerDisconnResponse.cid">
 <code class="sig-name descname">cid</code><a class="headerlink" href="#caproto.ServerDisconnResponse.cid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer ID for this Channel designated by the client.</p>
@@ -963,7 +962,7 @@ closing the Channel.</p>
 <div class="section" id="special-constants">
 <h2><a class="toc-backref" href="#id5">Special Constants</a><a class="headerlink" href="#special-constants" title="Permalink to this headline">¶</a></h2>
 <p>Caproto uses special constants to represent the states of the state machine:</p>
-<dl class="py data">
+<dl class="data">
 <dt id="caproto.SEND_SEARCH_REQUEST">
 <code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">SEND_SEARCH_REQUEST</code><a class="headerlink" href="#caproto.SEND_SEARCH_REQUEST" title="Permalink to this definition">¶</a></dt>
 <dt id="caproto.AWAIT_SEARCH_RESPONSE">
@@ -1021,7 +1020,7 @@ client and the server state update.</p>
 </pre></div>
 </div>
 <p>Notice the special constants to represent which role a peer is playing.</p>
-<dl class="py data">
+<dl class="data">
 <dt id="caproto.CLIENT">
 <code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">CLIENT</code><a class="headerlink" href="#caproto.CLIENT" title="Permalink to this definition">¶</a></dt>
 <dt id="caproto.SERVER">
@@ -1029,7 +1028,7 @@ client and the server state update.</p>
 <dd></dd></dl>
 
 <p>Special constants are also used to represent the “direction” of a command.</p>
-<dl class="py data">
+<dl class="data">
 <dt id="caproto.RESPONSE">
 <code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">RESPONSE</code><a class="headerlink" href="#caproto.RESPONSE" title="Permalink to this definition">¶</a></dt>
 <dt id="caproto.REQUEST">
@@ -1039,7 +1038,7 @@ client and the server state update.</p>
 <p>Another special constant serves as a sentinel “Command” returned by
 <code class="xref py py-func docutils literal notranslate"><span class="pre">read_from_bytestream()</span></code> when more data needs to be received before any new
 Commands can be parsed.</p>
-<dl class="py data">
+<dl class="data">
 <dt id="caproto.NEED_DATA">
 <code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">NEED_DATA</code><a class="headerlink" href="#caproto.NEED_DATA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1047,7 +1046,7 @@ Commands can be parsed.</p>
 <p>Similarly, the sentinel <a class="reference internal" href="#caproto.DISCONNECTED" title="caproto.DISCONNECTED"><code class="xref py py-class docutils literal notranslate"><span class="pre">DISCONNECTED</span></code></a> is re-used as a “Command”
 allowing for consistent handling of disconnection events through the command
 queues.</p>
-<dl class="py data">
+<dl class="data">
 <dt>
 <code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">DISCONNECTED</code></dt>
 <dd></dd></dl>
@@ -1055,9 +1054,9 @@ queues.</p>
 </div>
 <div class="section" id="the-virtualcircuit-object">
 <h2><a class="toc-backref" href="#id6">The VirtualCircuit object</a><a class="headerlink" href="#the-virtualcircuit-object" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.VirtualCircuit">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">VirtualCircuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">our_role</span></em>, <em class="sig-param"><span class="n">address</span></em>, <em class="sig-param"><span class="n">priority</span></em>, <em class="sig-param"><span class="n">protocol_version</span><span class="o">=</span><span class="default_value">13</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">VirtualCircuit</code><span class="sig-paren">(</span><em class="sig-param">our_role</em>, <em class="sig-param">address</em>, <em class="sig-param">priority</em>, <em class="sig-param">protocol_version=13</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit" title="Permalink to this definition">¶</a></dt>
 <dd><p>An object encapulating the state of one CA client–server connection.</p>
 <p>It is a companion to a TCP socket managed by the user. All data
 received over the socket should be passed to <a class="reference internal" href="#caproto.VirtualCircuit.recv" title="caproto.VirtualCircuit.recv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">recv()</span></code></a>. Any data sent
@@ -1074,39 +1073,39 @@ load. Lowest priority is 0; highest is 99.</p>
 </dl>
 </dd>
 </dl>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.VirtualCircuit.our_role">
 <code class="sig-name descname">our_role</code><a class="headerlink" href="#caproto.VirtualCircuit.our_role" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#caproto.CLIENT" title="caproto.CLIENT"><code class="xref py py-class docutils literal notranslate"><span class="pre">caproto.CLIENT</span></code></a> or <a class="reference internal" href="#caproto.SERVER" title="caproto.SERVER"><code class="xref py py-class docutils literal notranslate"><span class="pre">caproto.SERVER</span></code></a></p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.VirtualCircuit.log">
 <code class="sig-name descname">log</code><a class="headerlink" href="#caproto.VirtualCircuit.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Python logger instance</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.VirtualCircuit.host">
 <code class="sig-name descname">host</code><a class="headerlink" href="#caproto.VirtualCircuit.host" title="Permalink to this definition">¶</a></dt>
 <dd><p>peer host name</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.VirtualCircuit.port">
 <code class="sig-name descname">port</code><a class="headerlink" href="#caproto.VirtualCircuit.port" title="Permalink to this definition">¶</a></dt>
 <dd><p>peer port number</p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.VirtualCircuit.key">
 <code class="sig-name descname">key</code><a class="headerlink" href="#caproto.VirtualCircuit.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>a unique identifer for this instance: <code class="xref py py-data docutils literal notranslate"><span class="pre">((host,</span> <span class="pre">port),</span> <span class="pre">priority)</span></code></p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.VirtualCircuit.send">
-<code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">commands</span></em>, <em class="sig-param"><span class="n">extra</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.send" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*commands</em>, <em class="sig-param">extra=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.send" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert one or more high-level Commands into buffers of bytes that may
 be broadcast together in one TCP packet. Update our internal
 state machine.</p>
@@ -1130,9 +1129,9 @@ to the logger.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.VirtualCircuit.recv">
-<code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">buffers</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.recv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.recv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*buffers</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.recv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.recv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse commands from buffers received over TCP.</p>
 <p>When the caller is ready to process the commands, each command should
 first be passed to <a class="reference internal" href="#caproto.VirtualCircuit.process_command" title="caproto.VirtualCircuit.process_command"><code class="xref py py-meth docutils literal notranslate"><span class="pre">VirtualCircuit.process_command()</span></code></a> to validate
@@ -1152,37 +1151,37 @@ it against the protocol and update the VirtualCircuit’s state.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.VirtualCircuit.process_command">
-<code class="sig-name descname">process_command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.process_command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.process_command" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">process_command</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">command</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.process_command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.process_command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update internal state machine and raise if protocol is violated.</p>
 <p>Received commands should be passed through here before any additional
 processing by a server or client layer.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.VirtualCircuit.disconnect">
-<code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.disconnect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.disconnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify all channels on this circuit that they are disconnected.</p>
 <p>Clients should call this method when a TCP connection is lost.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.VirtualCircuit.new_channel_id">
-<code class="sig-name descname">new_channel_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.new_channel_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.new_channel_id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">new_channel_id</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.new_channel_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.new_channel_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a valid value for a cid or sid.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.VirtualCircuit.new_subscriptionid">
-<code class="sig-name descname">new_subscriptionid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.new_subscriptionid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.new_subscriptionid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">new_subscriptionid</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.new_subscriptionid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.new_subscriptionid" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is used by the convenience methods to obtain an unused integer ID.
 It does not update any important state.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.VirtualCircuit.new_ioid">
-<code class="sig-name descname">new_ioid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.new_ioid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.new_ioid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">new_ioid</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#VirtualCircuit.new_ioid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.VirtualCircuit.new_ioid" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is used by the convenience methods to obtain an unused integer ID.
 It does not update any important state.</p>
 </dd></dl>
@@ -1192,9 +1191,9 @@ It does not update any important state.</p>
 </div>
 <div class="section" id="the-broadcaster-object">
 <h2><a class="toc-backref" href="#id7">The Broadcaster object</a><a class="headerlink" href="#the-broadcaster-object" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.Broadcaster">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">Broadcaster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">our_role</span></em>, <em class="sig-param"><span class="n">protocol_version</span><span class="o">=</span><span class="default_value">13</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">Broadcaster</code><span class="sig-paren">(</span><em class="sig-param">our_role</em>, <em class="sig-param">protocol_version=13</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster" title="Permalink to this definition">¶</a></dt>
 <dd><p>An object encapsulating the state of one CA UDP connection.</p>
 <p>It is a companion to a UDP socket managed by a client or server
 implementation. All data received over the socket should be passed to
@@ -1209,21 +1208,21 @@ implementation. All data received over the socket should be passed to
 </dl>
 </dd>
 </dl>
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.Broadcaster.our_role">
 <code class="sig-name descname">our_role</code><a class="headerlink" href="#caproto.Broadcaster.our_role" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="#caproto.CLIENT" title="caproto.CLIENT"><code class="xref py py-class docutils literal notranslate"><span class="pre">caproto.CLIENT</span></code></a> or <a class="reference internal" href="#caproto.SERVER" title="caproto.SERVER"><code class="xref py py-class docutils literal notranslate"><span class="pre">caproto.SERVER</span></code></a></p>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="caproto.Broadcaster.log">
 <code class="sig-name descname">log</code><a class="headerlink" href="#caproto.Broadcaster.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Python logger instance</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.Broadcaster.send">
-<code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">commands</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.send" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*commands</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.send" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert one or more high-level Commands into bytes that may be
 broadcast together in one UDP datagram. Update our internal
 state machine.</p>
@@ -1243,9 +1242,9 @@ state machine.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.Broadcaster.recv">
-<code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byteslike</span></em>, <em class="sig-param"><span class="n">address</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.recv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.recv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">byteslike</em>, <em class="sig-param">address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.recv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.recv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse commands from a UDP datagram.</p>
 <p>When the caller is ready to process the commands, each command should
 first be passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">Broadcaster.process_command()</span></code> to validate it
@@ -1266,22 +1265,22 @@ against the protocol and update the Broadcaster’s state.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.Broadcaster.process_commands">
-<code class="sig-name descname">process_commands</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">commands</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.process_commands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.process_commands" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">process_commands</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">commands</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.process_commands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.process_commands" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update internal state machine and raise if protocol is violated.</p>
 <p>Received commands should be passed through here before any additional
 processing by a server or client layer.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.Broadcaster.new_search_id">
-<code class="sig-name descname">new_search_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.new_search_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.new_search_id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">new_search_id</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.new_search_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.new_search_id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.Broadcaster.search">
-<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">cid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.search" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name</em>, <em class="sig-param">*</em>, <em class="sig-param">cid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.VersionRequest" title="caproto.VersionRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">VersionRequest</span></code></a> and <a class="reference internal" href="#caproto.SearchRequest" title="caproto.SearchRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">SearchRequest</span></code></a>.</p>
 <p>The protocol requires that these be transmitted together as part of one
 datagram.</p>
@@ -1300,9 +1299,9 @@ datagram.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.Broadcaster.register">
-<code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ip</span><span class="o">=</span><span class="default_value">'0.0.0.0'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.register" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">ip='0.0.0.0'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_broadcaster.html#Broadcaster.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.Broadcaster.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.RepeaterRegisterRequest" title="caproto.RepeaterRegisterRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">RepeaterRegisterRequest</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1329,9 +1328,9 @@ packet.</p>
 <p>These objects are used internally by <a class="reference internal" href="#caproto.VirtualCircuit" title="caproto.VirtualCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">VirtualCircuit</span></code></a> to track the state
 of individual channels. The user can optionally use them as a convenience for
 generating valid commands.</p>
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ClientChannel">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ClientChannel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">circuit</span></em>, <em class="sig-param"><span class="n">cid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">string_encoding</span><span class="o">=</span><span class="default_value">'latin-1'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ClientChannel</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">circuit</em>, <em class="sig-param">cid=None</em>, <em class="sig-param">string_encoding='latin-1'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel" title="Permalink to this definition">¶</a></dt>
 <dd><p>An object encapsulating the state of the EPICS Channel on a Client.</p>
 <p>A ClientChannel may be created in one of two ways:
 (1) The user instantiates a ClientChannel with a name, server address,
@@ -1356,9 +1355,9 @@ environment variable.</p>
 </dl>
 </dd>
 </dl>
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.version">
-<code class="sig-name descname">version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.version" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">version</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.VersionRequest" title="caproto.VersionRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">VersionRequest</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1376,9 +1375,9 @@ load. Lowest priority is 0; highest is 99. Default is 0.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.host_name">
-<code class="sig-name descname">host_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.host_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.host_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">host_name</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">host_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.host_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.host_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.HostNameRequest" title="caproto.HostNameRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">HostNameRequest</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1394,9 +1393,9 @@ load. Lowest priority is 0; highest is 99. Default is 0.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.client_name">
-<code class="sig-name descname">client_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">client_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.client_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.client_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">client_name</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">client_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.client_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.client_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.ClientNameRequest" title="caproto.ClientNameRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClientNameRequest</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1413,9 +1412,9 @@ load. Lowest priority is 0; highest is 99. Default is 0.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.create">
-<code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.create" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <code class="xref py py-class docutils literal notranslate"><span class="pre">CreateChanRequest</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1426,9 +1425,9 @@ load. Lowest priority is 0; highest is 99. Default is 0.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.read">
-<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ioid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notify</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.read" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">data_type=None</em>, <em class="sig-param">data_count=None</em>, <em class="sig-param">ioid=None</em>, <em class="sig-param">notify=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.ReadRequest" title="caproto.ReadRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadRequest</span></code></a> or <a class="reference internal" href="#caproto.ReadNotifyRequest" title="caproto.ReadNotifyRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadNotifyRequest</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1457,9 +1456,9 @@ Channel Access in 3.13 and is not well-supported by caproto.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.write">
-<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">data_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ioid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notify</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.write" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">data</em>, <em class="sig-param">data_type=None</em>, <em class="sig-param">data_count=None</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">ioid=None</em>, <em class="sig-param">notify=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <code class="xref py py-class docutils literal notranslate"><span class="pre">WriteRequest</span> <span class="pre">or</span> <span class="pre">`:class:`WriteNotifyRequest</span></code>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1490,9 +1489,9 @@ a <code class="docutils literal notranslate"><span class="pre">WriteRequest</spa
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.subscribe">
-<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subscriptionid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">low</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">high</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">to</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">mask</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.subscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.subscribe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">data_type=None</em>, <em class="sig-param">data_count=None</em>, <em class="sig-param">subscriptionid=None</em>, <em class="sig-param">low=0.0</em>, <em class="sig-param">high=0.0</em>, <em class="sig-param">to=0.0</em>, <em class="sig-param">mask=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.subscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.subscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.EventAddRequest" title="caproto.EventAddRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventAddRequest</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1527,9 +1526,9 @@ count, which can be checked in the Channel’s attribute
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.unsubscribe">
-<code class="sig-name descname">unsubscribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subscriptionid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.unsubscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.unsubscribe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unsubscribe</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">subscriptionid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.unsubscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.unsubscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.EventAddRequest" title="caproto.EventAddRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventAddRequest</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1547,9 +1546,9 @@ corresponding <a class="reference internal" href="#caproto.EventAddRequest" titl
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ClientChannel.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.clear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ClientChannel.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ClientChannel.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.ClearChannelRequest" title="caproto.ClearChannelRequest"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClearChannelRequest</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1562,9 +1561,9 @@ corresponding <a class="reference internal" href="#caproto.EventAddRequest" titl
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ServerChannel">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ServerChannel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">circuit</span></em>, <em class="sig-param"><span class="n">cid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">string_encoding</span><span class="o">=</span><span class="default_value">'latin-1'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ServerChannel</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">circuit</em>, <em class="sig-param">cid=None</em>, <em class="sig-param">string_encoding='latin-1'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel" title="Permalink to this definition">¶</a></dt>
 <dd><p>A server-side Channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1579,9 +1578,9 @@ environment variable.</p>
 </dl>
 </dd>
 </dl>
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.version">
-<code class="sig-name descname">version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.version" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">version</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.VersionResponse" title="caproto.VersionResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">VersionResponse</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1592,9 +1591,9 @@ environment variable.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.create">
-<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">native_data_type</span></em>, <em class="sig-param"><span class="n">native_data_count</span></em>, <em class="sig-param"><span class="n">sid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.create" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">native_data_type</em>, <em class="sig-param">native_data_count</em>, <em class="sig-param">sid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <code class="xref py py-class docutils literal notranslate"><span class="pre">CreateChanResponse</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1615,9 +1614,9 @@ environment variable.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.create_fail">
-<code class="sig-name descname">create_fail</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.create_fail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.create_fail" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">create_fail</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.create_fail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.create_fail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.CreateChFailResponse" title="caproto.CreateChFailResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">CreateChFailResponse</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1628,9 +1627,9 @@ environment variable.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.read">
-<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">ioid</span></em>, <em class="sig-param"><span class="n">data_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notify</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.read" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">data</em>, <em class="sig-param">ioid</em>, <em class="sig-param">data_type=None</em>, <em class="sig-param">data_count=None</em>, <em class="sig-param">status=1</em>, <em class="sig-param">*</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">notify=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.ReadResponse" title="caproto.ReadResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadResponse</span></code></a> or <a class="reference internal" href="#caproto.ReadNotifyResponse" title="caproto.ReadNotifyResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReadNotifyResponse</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1663,9 +1662,9 @@ Channel Access in 3.13 and is not well-supported by caproto.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.write">
-<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ioid</span></em>, <em class="sig-param"><span class="n">data_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_count</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.write" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">ioid</em>, <em class="sig-param">data_type=None</em>, <em class="sig-param">data_count=None</em>, <em class="sig-param">status=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.WriteNotifyResponse" title="caproto.WriteNotifyResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteNotifyResponse</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1691,9 +1690,9 @@ count, which can be checked in the Channel’s attribute
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.subscribe">
-<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">subscriptionid</em>, <em class="sig-param">data_type=None</em>, <em class="sig-param">data_count=None</em>, <em class="sig-param">status=&lt;CAStatus.ECA_NEWCONN: CAStatusCode(name='ECA_NEWCONN'</em>, <em class="sig-param">code=32</em>, <em class="sig-param">code_with_severity=259</em>, <em class="sig-param">severity=&lt;CASeverity.INFO: 3&gt;</em>, <em class="sig-param">success=1</em>, <em class="sig-param">defunct=True</em>, <em class="sig-param">description='New or resumed network connection')&gt;</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.subscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.subscribe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">data</em>, <em class="sig-param">subscriptionid</em>, <em class="sig-param">data_type=None</em>, <em class="sig-param">data_count=None</em>, <em class="sig-param">status=&lt;CAStatus.ECA_NEWCONN: CAStatusCode(name='ECA_NEWCONN'</em>, <em class="sig-param">code=32</em>, <em class="sig-param">code_with_severity=259</em>, <em class="sig-param">severity=&lt;CASeverity.INFO: 3&gt;</em>, <em class="sig-param">success=1</em>, <em class="sig-param">defunct=True</em>, <em class="sig-param">description='New or resumed network connection')&gt;</em>, <em class="sig-param">metadata=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.subscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.subscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.EventAddResponse" title="caproto.EventAddResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventAddResponse</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1722,9 +1721,9 @@ count, which can be checked in the Channel’s attribute
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.unsubscribe">
-<code class="sig-name descname">unsubscribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subscriptionid</span></em>, <em class="sig-param"><span class="n">data_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_count</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.unsubscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.unsubscribe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unsubscribe</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">subscriptionid</em>, <em class="sig-param">data_type=None</em>, <em class="sig-param">data_count=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.unsubscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.unsubscribe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.EventCancelResponse" title="caproto.EventCancelResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventCancelResponse</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1744,9 +1743,9 @@ native data type, which can be checked in the Channel’s attribute
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.clear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.ClearChannelResponse" title="caproto.ClearChannelResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClearChannelResponse</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1757,9 +1756,9 @@ native data type, which can be checked in the Channel’s attribute
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="caproto.ServerChannel.disconnect">
-<code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.disconnect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_circuit.html#ServerChannel.disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ServerChannel.disconnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a valid <a class="reference internal" href="#caproto.ServerDisconnResponse" title="caproto.ServerDisconnResponse"><code class="xref py py-class docutils literal notranslate"><span class="pre">ServerDisconnResponse</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1779,196 +1778,196 @@ native data type, which can be checked in the Channel’s attribute
 encode metadata like time, alarm status, and control limits with the data
 value(s). Each Channel Access data type has an integer ID, encoded by caproto
 in the <a class="reference internal" href="#caproto.ChannelType" title="caproto.ChannelType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChannelType</span></code></a> enum:</p>
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.ChannelType">
-<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ChannelType</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/caproto/_dbr.html#ChannelType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ChannelType" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">ChannelType</code><a class="reference internal" href="_modules/caproto/_dbr.html#ChannelType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.ChannelType" title="Permalink to this definition">¶</a></dt>
 <dd><p>All channel types supported by Channel Access</p>
 <p>The ones that should be used in servers to specify the type of pvproperty
 or ChannelData are only “native” types (STRING, INT, FLOAT, ENUM, CHAR,
 LONG, DOUBLE)</p>
 <p>The remaining channel data types are used for clients requesting additional
 metadata from the server.</p>
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STRING = 0</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">INT = 1</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">FLOAT = 2</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">ENUM = 3</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CHAR = 4</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">LONG = 5</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">DOUBLE = 6</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STS_STRING = 7</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STS_INT = 8</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STS_FLOAT = 9</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STS_ENUM = 10</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STS_CHAR = 11</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STS_LONG = 12</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STS_DOUBLE = 13</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">TIME_STRING = 14</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">TIME_INT = 15</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">TIME_FLOAT = 16</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">TIME_ENUM = 17</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">TIME_CHAR = 18</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">TIME_LONG = 19</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">TIME_DOUBLE = 20</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">GR_STRING = 21</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">GR_INT = 22</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">GR_FLOAT = 23</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">GR_ENUM = 24</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">GR_CHAR = 25</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">GR_LONG = 26</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">GR_DOUBLE = 27</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CTRL_STRING = 28</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CTRL_INT = 29</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CTRL_FLOAT = 30</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CTRL_ENUM = 31</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CTRL_CHAR = 32</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CTRL_LONG = 33</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CTRL_DOUBLE = 34</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">STSACK_STRING = 37</code></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt>
 <code class="sig-name descname">CLASS_NAME = 38</code></dt>
 <dd></dd></dl>
@@ -2028,13 +2027,13 @@ and the built-in Python <a class="reference external" href="https://docs.python.
 <p>The only special exceptions raised by caproto are <a class="reference internal" href="#caproto.LocalProtocolError" title="caproto.LocalProtocolError"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalProtocolError</span></code></a>
 and <a class="reference internal" href="#caproto.RemoteProtocolError" title="caproto.RemoteProtocolError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteProtocolError</span></code></a>. These inherit from
 <code class="xref py py-class docutils literal notranslate"><span class="pre">ProtocolError</span></code>.</p>
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.LocalProtocolError">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">LocalProtocolError</code><a class="reference internal" href="_modules/caproto/_utils.html#LocalProtocolError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.LocalProtocolError" title="Permalink to this definition">¶</a></dt>
 <dd><p>You tried to do something that caproto thinks is illegal.</p>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.RemoteProtocolError">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.</code><code class="sig-name descname">RemoteProtocolError</code><a class="reference internal" href="_modules/caproto/_utils.html#RemoteProtocolError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.RemoteProtocolError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Your remote peer tried to do something that caproto thinks is illegal.</p>
@@ -2063,19 +2062,11 @@ and <a class="reference internal" href="#caproto.RemoteProtocolError" title="cap
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -2086,6 +2077,7 @@ and <a class="reference internal" href="#caproto.RemoteProtocolError" title="cap
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

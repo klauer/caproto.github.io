@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,18 +12,12 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -35,6 +30,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Servers" href="servers.html" />
@@ -52,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> caproto
+            <a href="index.html" class="icon icon-home"> caproto
           
 
           
@@ -79,7 +78,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -116,7 +114,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -155,7 +152,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li>Records</li>
     
@@ -185,7 +182,7 @@ layout and linking of common EPICS database records. The source code of these
 functionality of the corresponding record, but make available over Channel
 Access all of the fields one would normally expect from that record.</p>
 <p>See the <a class="reference internal" href="iocs.html#records-example"><span class="std std-ref">Records</span></a> example for usage.</p>
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.RecordFieldGroup">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">RecordFieldGroup</code><a class="reference internal" href="_modules/caproto/server/records.html#RecordFieldGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.RecordFieldGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a PVGroup class used to represent the basic fields from any given
@@ -511,7 +508,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.AiFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">AiFields</code><a class="reference internal" href="_modules/caproto/server/records.html#AiFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.AiFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -924,7 +921,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.AsubFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">AsubFields</code><a class="reference internal" href="_modules/caproto/server/records.html#AsubFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.AsubFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -2741,7 +2738,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.AaiFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">AaiFields</code><a class="reference internal" href="_modules/caproto/server/records.html#AaiFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.AaiFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -2938,7 +2935,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.AaoFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">AaoFields</code><a class="reference internal" href="_modules/caproto/server/records.html#AaoFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.AaoFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -3135,7 +3132,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.AoFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">AoFields</code><a class="reference internal" href="_modules/caproto/server/records.html#AoFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.AoFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -3629,7 +3626,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.AsynFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">AsynFields</code><a class="reference internal" href="_modules/caproto/server/records.html#AsynFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.AsynFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -4330,7 +4327,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.BiFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">BiFields</code><a class="reference internal" href="_modules/caproto/server/records.html#BiFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.BiFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -4536,7 +4533,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.BoFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">BoFields</code><a class="reference internal" href="_modules/caproto/server/records.html#BoFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.BoFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -4796,7 +4793,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.CalcFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">CalcFields</code><a class="reference internal" href="_modules/caproto/server/records.html#CalcFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.CalcFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -5344,7 +5341,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.CalcoutFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">CalcoutFields</code><a class="reference internal" href="_modules/caproto/server/records.html#CalcoutFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.CalcoutFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -6117,7 +6114,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.CompressFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">CompressFields</code><a class="reference internal" href="_modules/caproto/server/records.html#CompressFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.CompressFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -6314,7 +6311,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.DfanoutFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">DfanoutFields</code><a class="reference internal" href="_modules/caproto/server/records.html#DfanoutFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.DfanoutFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -6628,7 +6625,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.EventFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">EventFields</code><a class="reference internal" href="_modules/caproto/server/records.html#EventFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.EventFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -6744,7 +6741,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.FanoutFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">FanoutFields</code><a class="reference internal" href="_modules/caproto/server/records.html#FanoutFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.FanoutFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -6968,7 +6965,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.HistogramFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">HistogramFields</code><a class="reference internal" href="_modules/caproto/server/records.html#HistogramFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.HistogramFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -7201,7 +7198,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.LonginFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">LonginFields</code><a class="reference internal" href="_modules/caproto/server/records.html#LonginFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.LonginFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -7488,7 +7485,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.LongoutFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">LongoutFields</code><a class="reference internal" href="_modules/caproto/server/records.html#LongoutFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.LongoutFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -7802,7 +7799,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.MbbiFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">MbbiFields</code><a class="reference internal" href="_modules/caproto/server/records.html#MbbiFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.MbbiFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -8458,7 +8455,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.MbbidirectFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">MbbidirectFields</code><a class="reference internal" href="_modules/caproto/server/records.html#MbbidirectFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.MbbidirectFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -8916,7 +8913,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.MbboFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">MbboFields</code><a class="reference internal" href="_modules/caproto/server/records.html#MbboFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.MbboFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -9599,7 +9596,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.MbbodirectFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">MbbodirectFields</code><a class="reference internal" href="_modules/caproto/server/records.html#MbbodirectFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.MbbodirectFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -10102,7 +10099,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.MotorFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">MotorFields</code><a class="reference internal" href="_modules/caproto/server/records.html#MotorFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.MotorFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -11226,7 +11223,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.PermissiveFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">PermissiveFields</code><a class="reference internal" href="_modules/caproto/server/records.html#PermissiveFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.PermissiveFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -11297,7 +11294,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.SelFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">SelFields</code><a class="reference internal" href="_modules/caproto/server/records.html#SelFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.SelFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -11854,7 +11851,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.SeqFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">SeqFields</code><a class="reference internal" href="_modules/caproto/server/records.html#SeqFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.SeqFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -12528,7 +12525,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.StateFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">StateFields</code><a class="reference internal" href="_modules/caproto/server/records.html#StateFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.StateFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -12572,7 +12569,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.StringinFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">StringinFields</code><a class="reference internal" href="_modules/caproto/server/records.html#StringinFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.StringinFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -12715,7 +12712,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.StringoutFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">StringoutFields</code><a class="reference internal" href="_modules/caproto/server/records.html#StringoutFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.StringoutFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -12885,7 +12882,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.SubFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">SubFields</code><a class="reference internal" href="_modules/caproto/server/records.html#SubFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.SubFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -13433,7 +13430,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.SubarrayFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">SubarrayFields</code><a class="reference internal" href="_modules/caproto/server/records.html#SubarrayFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.SubarrayFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -13567,7 +13564,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.WaveformFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">WaveformFields</code><a class="reference internal" href="_modules/caproto/server/records.html#WaveformFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.WaveformFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -13782,7 +13779,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.Int64inFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">Int64inFields</code><a class="reference internal" href="_modules/caproto/server/records.html#Int64inFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.Int64inFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -14069,7 +14066,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.Int64outFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">Int64outFields</code><a class="reference internal" href="_modules/caproto/server/records.html#Int64outFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.Int64outFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -14383,7 +14380,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.LsiFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">LsiFields</code><a class="reference internal" href="_modules/caproto/server/records.html#LsiFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.LsiFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -14535,7 +14532,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.LsoFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">LsoFields</code><a class="reference internal" href="_modules/caproto/server/records.html#LsoFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.LsoFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -14723,7 +14720,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 </table>
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="caproto.server.records.PrintfFields">
 <em class="property">class </em><code class="sig-prename descclassname">caproto.server.records.</code><code class="sig-name descname">PrintfFields</code><a class="reference internal" href="_modules/caproto/server/records.html#PrintfFields"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#caproto.server.records.PrintfFields" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -14915,19 +14912,11 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -14938,6 +14927,7 @@ rather used as a <code class="docutils literal notranslate"><span class="pre">re
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

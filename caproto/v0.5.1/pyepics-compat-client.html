@@ -25,6 +25,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -232,7 +233,7 @@ Get and put to <code class="docutils literal notranslate"><span class="pre">rand
 <span class="gp">In [2]: </span><span class="n">pv_name</span> <span class="o">=</span> <span class="s1">&#39;random_walk:dt&#39;</span>
 
 <span class="gp">In [3]: </span><span class="n">epics</span><span class="o">.</span><span class="n">caget</span><span class="p">(</span><span class="n">pv_name</span><span class="p">)</span>
-<span class="gh">Out[3]: </span><span class="go">4.0</span>
+<span class="gh">Out[3]: </span><span class="go">3.0</span>
 
 <span class="gp">In [4]: </span><span class="n">epics</span><span class="o">.</span><span class="n">caput</span><span class="p">(</span><span class="n">pv_name</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -261,10 +262,10 @@ Get and put to <code class="docutils literal notranslate"><span class="pre">rand
 <span class="gh">Out[11]: </span><span class="go">0</span>
 
 <span class="gp">In [12]: </span><span class="kn">import</span> <span class="nn">time</span><span class="p">;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># give some time for responses to come in</span>
-<span class="go">received value -0.4015308639559041</span>
-<span class="go">received value -1.1721025271645944</span>
-<span class="go">received value -0.6745623114171597</span>
-<span class="go">received value -0.9295890168040997</span>
+<span class="go">received value -0.9996284957393957</span>
+<span class="go">received value -0.12168878472979672</span>
+<span class="go">received value -0.8924057722358698</span>
+<span class="go">received value -0.9007122317418694</span>
 
 <span class="gp">In [13]: </span><span class="n">x_pv</span><span class="o">.</span><span class="n">clear_callbacks</span><span class="p">()</span>
 </pre></div>
@@ -272,7 +273,7 @@ Get and put to <code class="docutils literal notranslate"><span class="pre">rand
 <p>The underlying caproto PV and Context objects from caproto’s main
 <a class="reference internal" href="threading-client.html"><span class="doc">Threading Client</span></a>. are accessible:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="n">pv</span><span class="o">.</span><span class="n">_caproto_pv</span>
-<span class="gh">Out[14]: </span><span class="go">&lt;PV name=&#39;random_walk:dt&#39; priority=0 address=(&#39;192.168.2.99&#39;, 54558), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;</span>
+<span class="gh">Out[14]: </span><span class="go">&lt;PV name=&#39;random_walk:dt&#39; priority=0 address=(&#39;192.168.2.99&#39;, 53756), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;</span>
 
 <span class="gp">In [15]: </span><span class="n">pv</span><span class="o">.</span><span class="n">_caproto_pv</span><span class="o">.</span><span class="n">context</span>
 <span class="gh">Out[15]: </span><span class="go">&lt;Context searches_pending=0 circuits=1 pvs=2 idle=0&gt;</span>
@@ -303,7 +304,7 @@ caproto’s test suite is more comprehensive.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pyepics-Compatible Client &mdash; caproto 0.1.2+0.ga1daf6ff.dirty documentation</title>
+  <title>Pyepics-Compatible Client &mdash; caproto 0.1.2 documentation</title>
   
 
   
@@ -30,6 +30,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -61,7 +62,7 @@
             
             
               <div class="version">
-                0.1.2+0.ga1daf6ff.dirty
+                0.1.2
               </div>
             
           
@@ -257,10 +258,10 @@ In [11]: x_pv.add_callback(f)
 Out[11]: 0
 
 In [12]: import time; time.sleep(5)  # give some time for responses to come in
-received value 0.03273057861400319
-received value 0.37083551639915224
-received value 0.6249583863068479
-received value 1.1599451410165589
+received value 0.5829071533184627
+received value 1.160917041738121
+received value 2.0254267444679894
+received value 2.991639026190023
 
 In [13]: x_pv.clear_callbacks()
 </pre>
@@ -268,7 +269,7 @@ In [13]: x_pv.clear_callbacks()
 <a class="reference internal" href="threading-client.html"><span class="doc">Threading Client</span></a>. are accessible:</p>
 <pre class="literal-block">
 In [14]: pv._caproto_pv
-Out[14]: &lt;PV name='random_walk:dt' priority=0 address=('192.168.2.99', 62300), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
+Out[14]: &lt;PV name='random_walk:dt' priority=0 address=('192.168.2.99', 51005), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
 
 In [15]: pv._caproto_pv.context
 Out[15]: &lt;Context searches_pending=0 circuits=1 pvs=2 idle=0&gt;
@@ -299,7 +300,7 @@ caproto’s test suite is more comprehensive.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>

@@ -30,6 +30,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -229,7 +230,7 @@ Get and put to <code class="docutils literal notranslate"><span class="pre">rand
 <span class="gp">In [2]: </span><span class="n">pv_name</span> <span class="o">=</span> <span class="s1">&#39;random_walk:dt&#39;</span>
 
 <span class="gp">In [3]: </span><span class="n">epics</span><span class="o">.</span><span class="n">caget</span><span class="p">(</span><span class="n">pv_name</span><span class="p">)</span>
-<span class="gh">Out[3]: </span><span class="go">1.0</span>
+<span class="gh">Out[3]: </span><span class="go">3.0</span>
 
 <span class="gp">In [4]: </span><span class="n">epics</span><span class="o">.</span><span class="n">caput</span><span class="p">(</span><span class="n">pv_name</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -259,8 +260,10 @@ In [11]: x_pv.add_callback(f)
 Out[11]: 0
 
 In [12]: import time; time.sleep(5)  # give some time for responses to come in
-received value 0.8995553222112289
-received value 1.484741938325394
+received value -0.04375073901335447
+received value -0.5673098560933736
+received value -0.5547042413201293
+received value -0.45175295131289395
 
 In [13]: x_pv.clear_callbacks()
 </pre>
@@ -268,10 +271,10 @@ In [13]: x_pv.clear_callbacks()
 <a class="reference internal" href="threading-client.html"><span class="doc">Threading Client</span></a>. are accessible:</p>
 <pre class="literal-block">
 In [14]: pv._caproto_pv
-Out[14]: &lt;PV name='random_walk:dt' priority=0 address=('192.168.2.99', 51017), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
+Out[14]: &lt;PV name='random_walk:dt' priority=0 address=('192.168.2.99', 50740), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
 
 In [15]: pv._caproto_pv.context
-Out[15]: &lt;Context searches_pending=0 circuits=2 pvs=2 idle=0&gt;
+Out[15]: &lt;Context searches_pending=0 circuits=1 pvs=2 idle=0&gt;
 </pre>
 <p>This brief demonstration has not exercised every aspect of the pyepics API, but
 caproto’s test suite is more comprehensive.</p>
@@ -299,7 +302,7 @@ caproto’s test suite is more comprehensive.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>

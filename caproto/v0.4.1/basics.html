@@ -30,6 +30,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -363,12 +364,12 @@ In [26]: version_response
 Out[26]: VersionResponse(version=13)
 
 In [27]: search_response
-Out[27]: SearchResponse(port=61537, ip='255.255.255.255', cid=0, version=13)
+Out[27]: SearchResponse(port=62186, ip='255.255.255.255', cid=0, version=13)
 
 In [28]: address = caproto.extract_address(search_response)
 
 In [29]: address
-Out[29]: ('192.168.2.99', 61537)
+Out[29]: ('192.168.2.99', 62186)
 </pre>
 <p>Now we have the address of a server that has the channel we’re interested in.
 Next, we’ll set aside the broadcaster and initiate TCP communication with this
@@ -647,7 +648,7 @@ until (unless) the command is actually sent.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>

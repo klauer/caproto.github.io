@@ -30,6 +30,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -234,7 +235,7 @@ In [6]: res.header  # a ctypes.BigEndianStructure
 Out[6]: MessageHeader(command=15, payload_size=8, data_type=6, data_count=1, parameter1=1, parameter2=0)
 
 In [7]: res.buffers  # a collection of one or more buffers
-Out[7]: (b'', &lt;memory at 0x7faf8ba634c8&gt;)
+Out[7]: (b'', &lt;memory at 0x7fe2c70be588&gt;)
 </pre>
 <p class="last">They were received directly from the socket into these structure with no
 intermediate copies. Accessing the <code class="docutils literal notranslate"><span class="pre">res.data</span></code> — which returns a
@@ -798,7 +799,7 @@ user.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>

@@ -30,6 +30,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/doctr-versions-menu.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -259,10 +260,10 @@ In [11]: x_pv.add_callback(f)
 Out[11]: 0
 
 In [12]: import time; time.sleep(5)  # give some time for responses to come in
-received value 0.1536107360767729
-received value 0.4024524691618694
-received value -0.27013936628466717
-received value -0.32140233669819773
+received value -0.5480524206282555
+received value -1.1487568458102302
+received value -0.9388283502599772
+received value -1.4753724146791893
 
 In [13]: x_pv.clear_callbacks()
 </pre>
@@ -270,7 +271,7 @@ In [13]: x_pv.clear_callbacks()
 <a class="reference internal" href="threading-client.html"><span class="doc">Threading Client</span></a>. are accessible:</p>
 <pre class="literal-block">
 In [14]: pv._caproto_pv
-Out[14]: &lt;PV name='random_walk:dt' priority=0 address=('192.168.2.99', 55549), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
+Out[14]: &lt;PV name='random_walk:dt' priority=0 address=('192.168.2.99', 58159), circuit_state=States.CONNECTED, channel_state=States.CONNECTED&gt;
 
 In [15]: pv._caproto_pv.context
 Out[15]: &lt;Context searches_pending=0 circuits=1 pvs=2 idle=0&gt;
@@ -301,7 +302,7 @@ caproto’s test suite is more comprehensive.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2017, Daniel Allan
+        &copy; Copyright 2020, Daniel Allan
 
     </p>
   </div>
