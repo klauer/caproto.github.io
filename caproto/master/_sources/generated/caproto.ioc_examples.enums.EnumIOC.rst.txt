@@ -39,6 +39,13 @@
            - 
            - 
     
+        *  - enum_class
+           - ``enum_class``
+           - 
+           - MyEnum (:class:`mbbi <caproto.server.records.MbbiFields>`)
+           - 
+           - 
+    
         *  - mbbi
            - ``mbbi``
            - 

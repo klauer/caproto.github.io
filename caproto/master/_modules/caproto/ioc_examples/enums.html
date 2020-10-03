@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>caproto.ioc_examples.enums &mdash; caproto 0.6.0+85.gf83250d9.dirty documentation</title>
+  <title>caproto.ioc_examples.enums &mdash; caproto 0.6.0+94.g1e8ef22c.dirty documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.6.0+85.gf83250d9.dirty
+                0.6.0+94.g1e8ef22c.dirty
               </div>
             
           
@@ -176,9 +176,17 @@
             
   <h1>Source code for caproto.ioc_examples.enums</h1><div class="highlight"><pre>
 <span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">from</span> <span class="nn">caproto.server</span> <span class="kn">import</span> <span class="n">pvproperty</span><span class="p">,</span> <span class="n">PVGroup</span><span class="p">,</span> <span class="n">ioc_arg_parser</span><span class="p">,</span> <span class="n">run</span>
-<span class="kn">from</span> <span class="nn">caproto</span> <span class="kn">import</span> <span class="n">ChannelType</span>
+<span class="kn">import</span> <span class="nn">enum</span>
 <span class="kn">from</span> <span class="nn">textwrap</span> <span class="kn">import</span> <span class="n">dedent</span>
+
+<span class="kn">from</span> <span class="nn">caproto</span> <span class="kn">import</span> <span class="n">ChannelType</span>
+<span class="kn">from</span> <span class="nn">caproto.server</span> <span class="kn">import</span> <span class="n">PVGroup</span><span class="p">,</span> <span class="n">ioc_arg_parser</span><span class="p">,</span> <span class="n">pvproperty</span><span class="p">,</span> <span class="n">run</span>
+
+
+<span class="k">class</span> <span class="nc">MyEnum</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+    <span class="n">off</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">on</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">unknown</span> <span class="o">=</span> <span class="mi">2</span>
 
 
 <div class="viewcode-block" id="EnumIOC"><a class="viewcode-back" href="../../../generated/caproto.ioc_examples.enums.EnumIOC.html#caproto.ioc_examples.enums.EnumIOC">[docs]</a><span class="k">class</span> <span class="nc">EnumIOC</span><span class="p">(</span><span class="n">PVGroup</span><span class="p">):</span>
@@ -222,7 +230,13 @@
                                     <span class="s1">&#39;four&#39;</span><span class="p">],</span>
                       <span class="n">record</span><span class="o">=</span><span class="s1">&#39;mbbi&#39;</span><span class="p">,</span>
                       <span class="n">dtype</span><span class="o">=</span><span class="n">ChannelType</span><span class="o">.</span><span class="n">ENUM</span>
-                      <span class="p">)</span></div>
+                      <span class="p">)</span>
+
+    <span class="c1"># A new, easier syntax:</span>
+    <span class="n">enum_class</span> <span class="o">=</span> <span class="n">pvproperty</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">MyEnum</span><span class="o">.</span><span class="n">on</span><span class="p">,</span>
+        <span class="n">record</span><span class="o">=</span><span class="s1">&#39;mbbi&#39;</span><span class="p">,</span>
+    <span class="p">)</span></div>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>

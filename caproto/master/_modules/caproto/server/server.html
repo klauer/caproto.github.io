@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>caproto.server.server &mdash; caproto 0.6.0+85.gf83250d9.dirty documentation</title>
+  <title>caproto.server.server &mdash; caproto 0.6.0+94.g1e8ef22c.dirty documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.6.0+85.gf83250d9.dirty
+                0.6.0+94.g1e8ef22c.dirty
               </div>
             
           
@@ -185,6 +185,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">enum</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -223,6 +224,27 @@
 
            <span class="s1">&#39;ioc_arg_parser&#39;</span><span class="p">,</span> <span class="s1">&#39;template_arg_parser&#39;</span>
            <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_enum_instance_to_enum_strings</span><span class="p">(</span><span class="n">enum_class</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get enum strings list from an `enum.IntEnum`-based class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    enum_class : subclass of enum.IntEnum</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_enum_string</span><span class="p">(</span><span class="n">int_value</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">enum_class</span><span class="p">(</span><span class="n">int_value</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;unset_</span><span class="si">{</span><span class="n">int_value</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">get_enum_string</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">enum_class</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
 
 
 <span class="k">class</span> <span class="nc">AsyncLibraryLayer</span><span class="p">:</span>
@@ -445,7 +467,17 @@
 
 
 <span class="k">class</span> <span class="nc">PvpropertyEnum</span><span class="p">(</span><span class="n">PvpropertyData</span><span class="p">,</span> <span class="n">ChannelEnum</span><span class="p">):</span>
-    <span class="o">...</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">enum_strings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">enum_strings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">CaprotoValueError</span><span class="p">(</span>
+                    <span class="s1">&#39;Cannot specify both an enum `value` and `enum_strings`&#39;</span><span class="p">)</span>
+
+            <span class="n">enum_strings</span> <span class="o">=</span> <span class="n">_enum_instance_to_enum_strings</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">enum_strings</span><span class="o">=</span><span class="n">enum_strings</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">PvpropertyBoolEnum</span><span class="p">(</span><span class="n">PvpropertyData</span><span class="p">,</span> <span class="n">ChannelEnum</span><span class="p">):</span>
@@ -493,7 +525,17 @@
 
 
 <span class="k">class</span> <span class="nc">PvpropertyEnumRO</span><span class="p">(</span><span class="n">PvpropertyReadOnlyData</span><span class="p">,</span> <span class="n">ChannelEnum</span><span class="p">):</span>
-    <span class="o">...</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">enum_strings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">enum_strings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">CaprotoValueError</span><span class="p">(</span>
+                    <span class="s1">&#39;Cannot specify both an enum `value` and `enum_strings`&#39;</span><span class="p">)</span>
+
+            <span class="n">enum_strings</span> <span class="o">=</span> <span class="n">_enum_instance_to_enum_strings</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">enum_strings</span><span class="o">=</span><span class="n">enum_strings</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+                         <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">PvpropertyBoolEnumRO</span><span class="p">(</span><span class="n">PvpropertyReadOnlyData</span><span class="p">,</span> <span class="n">ChannelEnum</span><span class="p">):</span>
@@ -1467,17 +1509,26 @@
 
                 <span class="n">bad_kw</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pvspec</span><span class="o">.</span><span class="n">cls_kwargs</span><span class="p">)</span> <span class="o">-</span> <span class="n">prop_cls</span><span class="o">.</span><span class="n">_valid_init_kw</span>
                 <span class="k">if</span> <span class="n">bad_kw</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">CaprotoValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Bad kw for class </span><span class="si">{</span><span class="n">prop_cls</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">bad_kw</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">CaprotoValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s1">: Bad kw for class </span><span class="si">{</span><span class="n">prop_cls</span><span class="si">}</span><span class="s1">: &#39;</span>
+                        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">bad_kw</span><span class="si">}</span><span class="s1">&#39;</span>
+                    <span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">cls</span>
 
 
 <span class="k">def</span> <span class="nf">data_class_from_pvspec</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">pvspec</span><span class="p">):</span>
     <span class="s1">&#39;Return the data class for a given PVSpec in a group&#39;</span>
-    <span class="k">if</span> <span class="n">pvspec</span><span class="o">.</span><span class="n">read_only</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">group</span><span class="o">.</span><span class="n">type_map_read_only</span><span class="p">[</span><span class="n">pvspec</span><span class="o">.</span><span class="n">dtype</span><span class="p">]</span>
+    <span class="n">dtype</span> <span class="o">=</span> <span class="n">pvspec</span><span class="o">.</span><span class="n">dtype</span>
 
-    <span class="k">return</span> <span class="n">group</span><span class="o">.</span><span class="n">type_map</span><span class="p">[</span><span class="n">pvspec</span><span class="o">.</span><span class="n">dtype</span><span class="p">]</span>
+    <span class="c1"># A special case for integer enums:</span>
+    <span class="k">if</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">):</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span>
+
+    <span class="k">if</span> <span class="n">pvspec</span><span class="o">.</span><span class="n">read_only</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">group</span><span class="o">.</span><span class="n">type_map_read_only</span><span class="p">[</span><span class="n">dtype</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">group</span><span class="o">.</span><span class="n">type_map</span><span class="p">[</span><span class="n">dtype</span><span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">channeldata_from_pvspec</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">pvspec</span><span class="p">):</span>
@@ -1524,6 +1575,7 @@
         <span class="nb">int</span><span class="p">:</span> <span class="n">PvpropertyInteger</span><span class="p">,</span>
         <span class="nb">float</span><span class="p">:</span> <span class="n">PvpropertyDouble</span><span class="p">,</span>
         <span class="nb">bool</span><span class="p">:</span> <span class="n">PvpropertyBoolEnum</span><span class="p">,</span>
+        <span class="n">enum</span><span class="o">.</span><span class="n">IntEnum</span><span class="p">:</span> <span class="n">PvpropertyEnum</span><span class="p">,</span>
 
         <span class="n">ChannelType</span><span class="o">.</span><span class="n">STRING</span><span class="p">:</span> <span class="n">PvpropertyString</span><span class="p">,</span>
         <span class="n">ChannelType</span><span class="o">.</span><span class="n">INT</span><span class="p">:</span> <span class="n">PvpropertyShort</span><span class="p">,</span>
